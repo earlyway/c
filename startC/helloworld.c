@@ -290,9 +290,220 @@ int main() {
 //----------------------------------------------------------C언어 강좌 7편. 제어문 if~else
 
 
+//while(조건){
+//	반복 영역;
+//}
+//while문은 조건이 참이면 반복 영역의 코드를 반복합니다.
+
+
+/*
+#include <stdio.h>
+int main() {
+	int i = 5;
+
+	while (i < 10) {
+		printf("호출 횟수 : %d\n", i);
+		i++;
+	}
+	return 0;
+}
+
+//do {
+//	반복 영역;
+//} while(조건);
+//do while문과 while문의 차이점은 반복 영역을 한번 실행하고나서 조건이 참일 때만 반복 영역의 코드를 반복합니다.
+//즉 do while 문은 조건을 검사하기 전에 반복 영역을 최소한 한번은 실행해야하는 상황일 때 고려해볼 수 있습니다.
+*/
+
+/*
+#include <stdio.h>
+
+int main() {
+	int i = 0;
+
+	while (i <= 100) {
+		i++;
+		if (i%2 != 0) continue;
+		printf("%d ", i);
+	}
+	printf("\n");
+
+	return 0;
+}
+// 1%2!=0 이므로 조건이 참이다. 그래서 continue에 의해 while반복 조건으로 간다. i가 홀수면 printf("%d ", i) 행이 실행되지 않으므로 print는 짝수만 된다.
+// 2%2=0 이므로 조건이 거짓이다. 그래서 다음 행으로 진행된다. i가 짝수면 printf("%d ", i) 행이 실행된다.
+
+*/
+
+
+/*
+//for(초기식; 조건; 증감식){
+//	반복 영역;
+//}
+#include <stdio.h>
+
+int main() {
+	int i;
+	for (i = 0; i < 10; i++)
+		printf("%d ", i);
+	return 0;
+}
+*/
+
+
+//for문을 이용한 1부터 100까지의 합
+/*
+#include <stdio.h>
+
+int main() {
+	int i;
+	int sum = 0;
+
+	for (i = 1; i <= 100; i++)
+		sum = sum + i;
+
+	printf("%d", sum);
+	return 0;
+}
+*/
+
+//-----------------------------------------------C언어 강좌 8편. 반복문 while, do while, continue , for
 
 
 
+//배열 int
+/*
+#include <stdio.h>
+
+int main() {
+	int array[3];
+	int i;
+
+	array[0] = 100;
+	array[1] = 200;
+	array[2] = 300;
+	
+
+	for (i = 0; i < 3; i++)
+		printf("array[%d]의 값 : %d\n", i, array[i]);
+	return 0;
+}
+*/
 
 
 
+//배열 char
+/*
+#include <stdio.h>
+int main() {
+	char arr[5];
+	scanf_s("%s", arr);
+	printf("arr : %s\n", arr);
+	return 0;
+}
+*/
+
+
+//2차원 배열
+/*
+#include <stdio.h>
+
+int main(void)
+{
+	int arr01[6] = { 10, 20, 30, 40, 50, 60 };
+	int arr02[2][3] = { 10, 20, 30, 40, 50, 60 };
+
+	printf("arr01의 배열 요소의 값\n");
+	printf("%d %d %d %d %d %d\n", arr01[0], arr01[1], arr01[2], arr01[3], arr01[4], arr01[5]);
+	printf("arr02의 배열 요소의 값\n");
+	printf("%d %d %d %d %d %d\n", arr02[0][0], arr02[0][1], arr02[0][2], arr02[1][0], arr02[1][1], arr02[1][2]);
+	return 0;
+}
+*/
+
+
+/*
+#include <stdio.h>
+
+int main() {
+	//int array2D[3][3] = {1,1,1,1,2,4,1,3,9 }; <-이것도 됨.
+	int array2D[3][3] =
+	{ {1,1,1},
+	  {1,2,4},
+	  {1,3,9} 
+	};
+	int i;
+	int j;
+
+	for (i = 0; i < 3; i++) {
+		for (j = 0; j < 3; j++) {
+			scanf_s("%d ", &array2D[i][j]);
+			printf("array : %d ", array2D[i][j]);
+		}
+	}
+}
+*/
+
+
+/*
+//http://www.tcpschool.com/c/c_array_twoDimensional 링크도 참고함.
+
+#include <stdio.h>
+void func(int arr[], int len);
+int main() {
+	int arr[] = { 1,2,3,4,5,6 };
+	func(arr, sizeof arr / sizeof(arr[6])); //배열의 길이 측정 sizeof 배열명 / sizeof 배열명[]
+	return 0;
+}
+
+void func(int arr[], int len) {
+	int i;
+	for (i = 0; i < len; i++)
+		printf("%d ", arr[i]);
+	printf("\n");
+}
+//정수형 배열 arr이 선언과 동시에 초기화되었다.
+//func 함수를 호출하면서 배열 arr와 배열의 길이를 인수argument 로 넘기고 있는 것을 확인할 수 있다.
+//배열의 길이를 함께 넘긴 이유는 배열을 넘겨받은 func함수의 입장에서는 배열의 길이를 모르기때문.
+
+//배열이 차지하는 메모리의 크기 = 배열의 길이 * sizeof(타입)
+//배열의 길이 = sizeof(배열명) / sizeof(배열명[0])
+
+
+*/
+
+//----------------------------------------------------------C언어 강좌 9편. 배열(다차원 배열에서 헷갈려서 이 링크도 참고함. http://www.tcpschool.com/c/c_array_twoDimensional )
+
+
+
+/*
+포인터 Pointer 란 메모리의 주소값을 담고있는 변수 혹은 상수이다. 간단해보이지만 메모리의 주소체계를 이해하지 못하면 포인터를 정확히 이해할 수 없다.
+여기서 주소란 메모리의 저장 장소의 위치값으로 하나의 주소값은 1byte 크기의 메모리 공간을 표현한다.
+한 블럭, 한 주소당 1byte의 메모리 공간을 차지함. 한개의 주소는 8개의 비트가 묶임. 1byte=8bit
+
+16비트. 즉, 2블럭의 범위는? 65536개의 주소를 부여할 수 있음.
+만약 16비트의 주소값 시작이 0번지부터라면 65535번지까지 주소 부여가 가능함.
+16비트 = 2바이트 = 0b1111111111111111 = 65535
+
+16비트로 나타낼 수 있는 최대 2진수 표현
+
+(2^n-1)-1 = 2^15-1 = 32767
+
+unsigned int에 의해 2의 보수를 진행하게 되면 0~65535
+--------------여기까지 주소값의 이해가 필요.------------
+
+*/
+
+#include <stdio.h>
+int main() {
+	int num, num1, num2;
+
+	num = 10;
+	num1 = 12;
+	num2 = 20;
+	printf("num의 메모리 저장 위치 : %#x\n", &num); // &연산자를 변수명 앞에 가져와서 변수의 주소값을  return 하도록 됨.
+	printf("num1의 메모리 저장 위치 : %#x\n", &num1);// 그래서 16진수의 형태로 print 됨.
+	printf("num2의 메모리 저장 위치 : %#x\n", &num2); // %x가 16진수로 출력시킬 때 필요한 포맷
+
+	return 0;
+}
