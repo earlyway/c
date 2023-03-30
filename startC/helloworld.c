@@ -184,7 +184,7 @@ char main() {
 }
 */
 
-//문자 붙이기 잘 안되네
+//문자 붙이기가 잘 안되네
 //------------------------------------------------C언어 강좌 5편. 함수의 정의와 사용
 
 /*
@@ -214,6 +214,82 @@ int main() {
 */
 
 //이 #define 은 전처리 과정에서 치환이 된다. 이 점을 유의해서 괄호를 잘 써야한다. 아래를 참고해보자.
+/*
+#include <stdio.h>
+#define SUM(X,Y) X+Y
+
+int main() {
+	int a = 10, b = 20;
+	printf("%d\n", SUM(a, b) * 100);
+}
+//이 함수를 실행하면 2010이 출력된다. 왜냐하면 #define의 전처리로 인해 main함수는 a+b*100이 되고 10+20*100 사칙연산으로 인해 10+2000이 되어 2010이 출력 되는 것임.
+//그러므로 전처리문을 쓸때는 괄호를 잘 사용해야한다.
+
+
+*/
+
+
+/*
+#include <stdio.h>
+#define SUM(X,Y) X+Y
+
+int main() {
+	int a = 10, b = 20;
+	printf("%d\n", SUM(a, b) * 100);
+	
+	if (SUM(a, b)*100 == 2010) {
+		printf("thank you");
+		return 0;
+	}
+}
+*/
+//-------------------------------------------C언어 강좌 6편. 전처리기문
+
+/*
+#include <stdio.h>
+int main() {
+	int a, b;
+
+	scanf_s("%d %d", &a, &b);
+
+	if (a < b)
+		printf("b가 a보다 크다.\n");
+	if (a > b)
+		printf("a가 b보다 크다.\n");
+	if (a == b)
+		printf("a와 b가 같다.\n");
+	if(a != b)
+		printf("a와 b가 같지 않다.\n");
+		return 0;
+	}
+*/
+//물론 else 나 else if 를 붙여 사용하는 것도 가능함.
+
+/*
+#include <stdio.h>
+
+int main() {
+	int a;
+	scanf_s("%d", &a);
+
+	if (a == 2)
+		printf("2가 입력되었습니다.\n");
+	else if (a == 3)
+		printf("3이 입력되었습니다.\n");
+	else
+		printf("2, 3이 아닌 다른 수가 입력되었습니다.\n");
+
+		return 0;
+}
+*/
+
+//논리 연산자 a && b -> a와 b가 모두 참이면 참. AND
+//			a || b -> a와 b중 하나라도 참이면 참. OR
+//			!a -> a가 참이 아니다.				NOT
+
+//----------------------------------------------------------C언어 강좌 7편. 제어문 if~else
+
+
 
 
 
