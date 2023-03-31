@@ -494,6 +494,8 @@ unsigned int에 의해 2의 보수를 진행하게 되면 0~65535
 
 */
 
+
+/*
 #include <stdio.h>
 int main() {
 	int num, num1, num2;
@@ -507,3 +509,28 @@ int main() {
 
 	return 0;
 }
+
+   &연산자는 '어느 변수의 주소값을 알아내는 역할'도 하고 있으며 상수는 메모리 공간에 위치하지않으므로 주소가 없어 &연산자를 사용할 수 없다.
+*/
+
+
+
+#include <stdio.h>
+int main() {
+	int Number;
+	int *pNumber;
+
+	Number = 10;
+	pNumber = &Number;
+
+	printf("변수 Number의 값 : %d\n", Number);
+	printf("변수 Number의 주소값 : %x\n\n", pNumber);
+
+	*pNumber = 60;
+	printf("변수 Number의 값 : %d\n", Number);
+	return 0;
+}
+//포인터 변수는 주소값만 저장할 수 있다. 
+// 여기에서 12행의 *연산자는 어떤 기능을 하냐면
+//간접 참조 연산자로 이 포인터가 가리키는 메모리 공간의 접근을 의미한다.
+//12행은 pNumber가 가리키는 변수 Number를 의미하게 되며 이것은 Number=60 과 같은 기능을 한다.
