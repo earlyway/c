@@ -129,7 +129,7 @@ int main()
 #include <stdio.h>
 
 int a;
-extern void func();
+extern void func(); //func 외부변수는 hwex.c 에서 가져온 함수이다.
 
 int main()
 {
@@ -513,7 +513,7 @@ int main() {
    &연산자는 '어느 변수의 주소값을 알아내는 역할'도 하고 있으며 상수는 메모리 공간에 위치하지않으므로 주소가 없어 &연산자를 사용할 수 없다.
 */
 
-
+/*
 
 #include <stdio.h>
 int main() {
@@ -534,3 +534,68 @@ int main() {
 // 여기에서 12행의 *연산자는 어떤 기능을 하냐면
 //간접 참조 연산자로 이 포인터가 가리키는 메모리 공간의 접근을 의미한다.
 //12행은 pNumber가 가리키는 변수 Number를 의미하게 되며 이것은 Number=60 과 같은 기능을 한다.
+*/
+
+
+/*
+for 반복문만을 활용해서 아래를 출력.
+	*
+	**
+	***
+	****
+	*****
+
+*/
+
+
+
+
+/*
+#include <stdio.h>
+
+int main() {
+	
+	char arr[5] = {'z','zz','zzz','zzzz'};
+	int i;
+
+	for (i = 0; i < 5; i++)
+		printf("%c\n", arr[i]);
+
+}
+*/
+
+
+
+/*
+
+#include <stdio.h>
+#include <string.h>
+
+void main() {
+	char* r[5] = {"e", "ee","eee","eeee","eeeee"};
+	int i;
+
+	for (i = 0; i < 5; i++)
+	{
+		printf_s("%s\n", r[i]);
+	}
+}
+*/
+
+#include<stdio.h>
+
+void main() {
+
+	int i, j;
+
+	for (i = 0; i < 5; i++) {
+
+		for (j = 0; j <= i; j++) {
+			printf("*");
+		}
+		printf("\n");
+	}
+
+}
+
+
