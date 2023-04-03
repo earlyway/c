@@ -550,34 +550,22 @@ for 반복문만을 활용해서 아래를 출력.
 
 
 
-/*
-#include <stdio.h>
 
-int main() {
-	
-	char arr[5] = {'z','zz','zzz','zzzz'};
-	int i;
-
-	for (i = 0; i < 5; i++)
-		printf("%c\n", arr[i]);
-
-}
-*/
 
 
 
 /*
 
 #include <stdio.h>
-#include <string.h>
 
 void main() {
-	char* r[5] = {"e", "ee","eee","eeee","eeeee"};
+	//char r[5] = {'a','bb','ccc','dddd','eeee'};
 	int i;
+	char star = '*';
 
 	for (i = 0; i < 5; i++)
 	{
-		printf_s("%s\n", r[i]);
+		printf_c("%c\n", star);
 	}
 }
 */
@@ -597,5 +585,6 @@ void main() {
 	}
 
 }
+
 
 
