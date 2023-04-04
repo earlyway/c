@@ -601,4 +601,19 @@ for문만을 활용하여 아래와 같이 출력.
 
 
 
+#include <stdio.h>
+
+void main() {
+	int i, j;
+
+	for (i = 4; i > -1; i--) {
+		for (j = 0; j <= i; j++) {
+			printf("*");
+		}
+		printf("\n");
+
+	}
+}
+
+//이렇게 하면 문제 1-2의 답이 나옴.
 
